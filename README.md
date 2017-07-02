@@ -7,3 +7,5 @@ opera neon : 1.0.2531.0
 firefox : 51.0.1
 
 chrome : 59.0.3071.115
+
+https://dumplehomin.github.io/font_list/dist/
