@@ -1,0 +1,47 @@
+.font_view
+	@extend %bg-color_fff
+	@include lineHeightPx2Rem( 18px )
+	height: 200px
+	padding: 10px
+	margin-bottom: 10px
+	p
+		line-height: 2
+
+.slider_container
+	@extend %width_50
+	@extend %float_left
+	
+	.slider
+		@extend %relative
+		border: 1px solid #d3d3d3
+		height: 16px
+
+		.slider_base
+			@extend %relative
+			@extend %width-height_100
+			@extend %cursor_pointer
+			background-color: rgb(144, 144, 144)
+
+		.slider_handle
+			@extend %bg-color_fff
+			@extend %absolute
+			width: 10px
+			height: 15px
+			left: 0px
+			top: 0px
+			border: 1px solid #d9d9d9
+			
+.colorpicker_container
+	@extend %float_right
+	width: 30%
+
+	#colorSelector
+		position: relative
+		width: 36px
+		height: 36px
+		background: url(/images/select.png)
+		div
+			@include position( absolute, $t: 3px, $l: 3px )
+			width: 30px
+			height: 30px
+			background: url(/images/select.png) center

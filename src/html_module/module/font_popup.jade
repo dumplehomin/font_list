@@ -1,0 +1,44 @@
+.font_view(data-popup_width="400" data-popup_title="Font View")
+	p ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+
+script( type='text/javascript' ).
+	(function(){
+		var popup_on_btn = _$.query(".popup_on_btn");
+		var font_view = _$.query(".font_view");
+		var current_font_family = _$.css(popup_on_btn, "font-family");
+		var popup_header_title = _$.query( ".popup_header h3" );
+
+		_$.css( font_view, "font-family", current_font_family );
+		popup_header_title.innerHTML = current_font_family;
+	})();
+
+.slider_container
+	h3 SIZE
+	.slider
+
+script( type='text/javascript' ).
+	$.rangeSetting();
+	fontSizeSetting();
+
+.colorpicker_container
+	#colorSelector
+		div( style="background-color: #000" )
+		input( type="hidden", value="000" )
+
+script( type='text/javascript' ).
+	var $colorSelector = $('#colorSelector');
+	$colorSelector.ColorPicker({
+		color: '#0000ff',
+		onShow: function (colpkr) {
+			$(colpkr).fadeIn(500);
+			return false;
+		},
+		onHide: function (colpkr) {
+			$(colpkr).fadeOut(500);
+			return false;
+		},
+		onChange: function (hsb, hex, rgb) {
+			$colorSelector.find("div").css('backgroundColor', '#' + hex);
+			$colorSelector.find("input").val( hex );
+		}
+	});

@@ -1,0 +1,21 @@
+@import "../../node_modules/open-color/open-color.scss"
+@import "sass_resource/colorpicker/colorpicker"
+
+@import "config"
+@import "sass_resource/reset"
+@import "sass_resource/helpers/helpers"
+@import "sass_resource/font/font"
+@import "sass_resource/layout/layout"
+
+
+a
+	@extend %txt-decoration_non
+	color: #666
+	&:hover
+		color: #47bbff
+
+html
+	font-size: $base_font_size
+
+body
+	padding: 20px 40px

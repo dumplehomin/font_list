@@ -1,0 +1,9 @@
+- var font_list = ["zillaslab", "bellefair", "opensans", "lato", "slabo27", "roboto"]
+
+ol.font_list.row
+	each font in font_list
+		li(class="col-xs-6 col-sm-4 col-md-3 col-lg-2 #{ font }")
+			.font_content
+				h2.font_title #{ font }
+				.font_preview_btn
+					a(href="" role="button" data-popup="/module/font_popup") 클릭

@@ -1,0 +1,27 @@
+@mixin gridSetting( $type ){
+	@for $t from 1 through $grid_max_num {
+		.col-#{ $type }-#{$t} {
+			width: $grid_1col_num * $t;
+		}
+	}
+
+	[class*="col-"] {
+		padding: 0 $grid_gutter;
+	}
+}
+
+@each $type, $size in $grid_type {
+	@if $size != null {
+		@media (min-width: $size) {
+			@include gridSetting( $type );
+		}
+	}@else {
+		@include gridSetting( $type );
+	}
+}
+
+[class*=col-] {
+	float: left
+}
+
+@include clearfix( ".row" );

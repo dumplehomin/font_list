@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+!='<!--[if IE 8]><html lang="ko" class="lt-ie10 lt-ie9 ie8"><![endif]-->'
+!='<!--[if IE 9]><html lang="ko" class="lt-ie10 ie9"><![endif]-->'
+!='<!--[if !IE]><!--><html lang="ko"><!--<![endif]-->'
+	head
+		meta(http-equiv='Content-Type', content='text/html; charset=euc-kr')
+		title onoffmix
+
+		!='<!--[if lt IE 9]><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script><script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><script type="text/javascript" src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script><![endif]-->'
+		!='<!--[if gte IE 9]><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><![endif]-->'
+		!='<!--[if !IE]> --><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><!-- <![endif]-->'
+		<!-- inject:css -->
+		<!-- endinject -->
+	body.xs
+		.wrapper
+			.header
+				h1.title 웹폰트
+				ul.order_btn
+					li.order_popularity
+						a(href="" role="button") 인기순
+					li.order_recent
+						a(href="" role="button") 최근순
+					li.order_hangul
+						a(href="" role="button") 가나다순
+			.main
+				include module/_font_list.jade
+				
+		<!-- inject:js -->
+		<!-- endinject -->

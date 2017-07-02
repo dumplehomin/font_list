@@ -1,0 +1,125 @@
+@mixin border-radius ( $radius: 4px ) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin background-origin ( $origin: padding-box ) {
+	-webkit-background-origin: $origin;
+	-moz-background-origin: $origin;
+	background-origin: $origin;
+}
+//-------------------------------------------------------------------------
+@mixin padding( $a: null, $b: null ){
+	$type: padding;
+	@include boxAreaCheck( $type, $a, $b );
+}
+
+@mixin margin( $a: null, $b: null ){
+	$type: margin;
+	@include boxAreaCheck( $type, $a, $b );
+}
+
+@mixin borderRadius( $a: null ){
+	$type: border-radius;
+	@include boxAreaCheck( $type, $a );
+}
+
+@mixin boxAreaCheck(
+	$type: null,
+	$a: null, 
+	$b: null
+) {
+	@if type-of($a) == number or $a == auto {
+		@include boxArea($type, $a);
+	}@else if type-of($a) == list {
+		@if type-of(nth($a, 1)) == string {
+			@if type-of($b) == list {
+				$i: 1;
+				@each $e in $a {
+					@include boxArea(#{$type}-#{$e}, nth($b, $i) );
+					$i: $i + 1;
+				}
+			}@else {
+				@each $e in $a {
+					@include boxArea(#{$type}-#{$e}, $b);
+				}
+			}
+		}@else {
+			@include boxArea($type, $a);
+		}
+	}@else if type-of($a) == string{
+		@if $a != auto {
+			@include boxArea(#{$type}-#{$a}, $b);
+		}
+	}
+}
+
+@mixin boxArea(
+	$a: null,
+	$b: null
+){
+	#{$a}: $b;
+}
+//-------------------------------------------------------------------------
+@mixin position(
+	$p: null,
+	$t: null,
+	$r: null, 
+	$b: null,
+	$l: null
+){
+	@if $p == null {
+		position: relative;
+	}@else {
+		position: $p;
+	}
+
+	top: $t;
+	right: $r;
+	bottom: $b;
+	left: $l;
+}
+//-------------------------------------------------------------------------
+@mixin font( $ff: sans-serif, $fs: null, $lh: 1.5, $fc: #000 ){
+	font-family: $ff;
+	font-size: $fs;
+	line-height: $lh;
+	color: $fc;
+}
+
+@mixin fontSizePx2Rem( $a ){
+	@include fontSizeCalc( $a, null, font-size, rem )
+}
+
+@mixin fontSizePx2Em( $a, $b ){
+	@include fontSizeCalc( $a, $b, font-size, em )
+}
+
+@mixin lineHeightPx2Rem( $a ){
+	@include fontSizeCalc( $a, null, line-height,rem )
+}
+
+@mixin lineHeightPx2Em( $a, $b ){
+	@include fontSizeCalc( $a, $b, line-height, em )
+}
+
+@mixin fontSizeCalc( $a, $b, $c, $d ){
+	#{$c}: $a;
+
+	@if $d == em {
+		#{$c}: px2em( $a, $b );
+	}@else {
+		#{$c}: px2rem( $a );
+	}
+}
+//-------------------------------------------------------------------------
+@mixin clearfix( $class ){
+	#{ $class }::after {
+		@extend %clearfix
+	}
+}
+//-------------------------------------------------------------------------
+@mixin gridAttrSetting( $el ){
+
+}

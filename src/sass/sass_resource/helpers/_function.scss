@@ -1,0 +1,11 @@
+@function px2em( $font_size, $parent_font_size: $base_font_size, $font_unit: em ) {
+	@return emCalc( $font_size, $parent_font_size, $font_unit );
+}
+
+@function px2rem( $font_size, $parent_font_size: $base_font_size, $font_unit: rem ) {
+	@return emCalc( $font_size, $parent_font_size, $font_unit );
+}
+
+@function emCalc( $font_size, $base_font_size: $base_font_size, $font_unit: em ) {
+	@return $font_size / $base_font_size + $font_unit;
+}

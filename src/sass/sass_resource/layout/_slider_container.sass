@@ -1,0 +1,23 @@
+.slider_container
+	@extend %width_50
+	@extend %float_left
+	
+	.slider
+		@extend %relative
+		border: 1px solid #d3d3d3
+		height: 16px
+
+		.slider_base
+			@extend %relative
+			@extend %width-height_100
+			@extend %cursor_pointer
+			background-color: rgb(144, 144, 144)
+
+		.slider_handle
+			@extend %bg-color_fff
+			@extend %absolute
+			width: 10px
+			height: 15px
+			left: 0px
+			top: 0px
+			border: 1px solid #d9d9d9

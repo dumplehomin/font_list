@@ -1,0 +1,42 @@
+.font_list.row
+	body.xs &
+		li
+			.font_content
+				@extend %relative
+				background-color: $oc-gray-2
+				border-radius: 5px
+				padding: 5px
+				margin: 5px 0
+				&::before
+					content: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+					@extend %block
+					@extend %width_100
+					@include fontSizePx2Rem( 18px )
+					@include lineHeightPx2Rem( 30px )
+					height: 120px
+					height: 12rem
+					max-height: 120px
+					max-height: 12rem
+					word-break: break-all
+
+				.font_title
+					@include fontSizePx2Rem( 14px )
+					@include lineHeightPx2Rem( 28px )
+					max-height: 28px
+					max-height: 2.8rem
+					margin-bottom: 35px
+				.font_preview_btn
+					@extend %width_100
+					@include position( absolute, $b: 0, $l: 0 )
+					padding: 10px 0
+					border-top: 1px solid $oc-gray-7
+					a
+						@extend %bg-color_fff
+						@extend %block
+						@extend %txt-align_center
+						@extend %float_right
+						@include fontSizePx2Rem( 11px )
+						width: 50px
+						padding: 5px
+						margin-right: 10px
+						border-radius: 5px

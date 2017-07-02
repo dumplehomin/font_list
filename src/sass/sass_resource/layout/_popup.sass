@@ -1,0 +1,29 @@
+.popup_wrap
+	@extend %width_100
+	@extend %height_100
+	@include position( absolute, $t: 0, $l: 0 )
+	background-color: rgba(0, 0, 0, 0.5)
+	transition: opacity .7s
+	opacity: 0
+	&.visible
+		opacity: 1
+	h3
+		@include fontSizePx2Rem( 13px )
+		@extend %font-wei_800
+	.popup_container
+		@include position( absolute, $t: 50%, $l: 50% )
+		transform: translate( -50%, -50% )
+		border: 1px solid #888
+		padding: 10px
+		background-color: $oc-lime-2
+
+		.popup_header
+			@extend %relative
+			@include fontSizePx2Rem( 20px )
+			@include lineHeightPx2Rem( 28px )
+			.popup_close_btn
+				@extend %cursor_pointer
+				@include position( absolute, $t: 0, $r: 0 )
+		.popup_content
+			@include fontSizePx2Rem( 12px )
+			word-break: break-all
