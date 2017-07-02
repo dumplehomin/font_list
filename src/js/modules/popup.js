@@ -20,7 +20,7 @@ function popupOpen( event, insert_el, _w ){
 	event.preventDefault();
 	var _this = event.target;
 
-	var popup_url = _this.getAttribute("data-popup") + ".html";
+	var popup_url = "https://dumplehomin.github.io/font_list/dist/" + _this.getAttribute("data-popup") + ".html";
 	var insert_el = insert_el ? _$.query( insert_el ) : document.body;
 	var popup_wrap =_$.makeEl( "div", popup_wrap_attr );
 	var popup_container = _$.makeEl( "div", popup_container_attr );
